@@ -11,12 +11,12 @@ RUN yum clean all \
  && yum -y reinstall glibc-common
 
 # 기본적으로 필요한 OS 패키지를 설치한다.
-RUN  yum -y install bind-utils tar unzip vi vim telnet net-tools curl openssl \
+RUN  yum -y install bind-utils tar unzip vi vim telnet net-tools curl openssl man tcpdump \
  && yum -y install apr apr-util apr-devel apr-util-devel \
  && yum -y install elinks locate python-setuptools \
  && yum clean all
 
-ENV LANG=ko_KR.utf8 TZ=Asia/Seoul
+ENV LANG=en_US.utf-8 TZ=Asia/Seoul
 
 # 컨테이너 실행시 실행될 명령
 CMD ["/bin/bash"]
